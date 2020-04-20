@@ -1,8 +1,9 @@
 AWSTemplateFormatVersion : '2010-09-09'
 
-Description: my template
+Description: my template 123123
 Resources:
     MyBucket:
         Type: AWS::S3::Bucket
+        DeletionPolicy: Retain
         Properties:
-            BucketName: cloudformation-rodrigo-bucket123
+            BucketName: cloudformation-rodrigo-bucket321
