@@ -5,4 +5,4 @@ Resources:
     MyBucket:
         Type: AWS::S3::Bucket
         Properties:
-            BucketName: my-unique-S3-bucket-name-rodri
+            BucketName: cloudformation-rodrigo-bucket123
