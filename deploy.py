@@ -14,12 +14,20 @@ except getopt.error as err:
 
 import boto3
 PROJECT = "aws-cloudformation"
+BUCKET_NAME = f"{PROJECT}cloudformation"
 cf = boto3.client('cloudformation')
+template=""
 with open('template.yaml', 'r') as file:
     template = file.read()
    
 if command in ("--create","-c"):
     response = cf.create_stack(
+        Parameters=[
+            {
+                'ParameterKey': 'BucketName',
+                'ParameterValue': BUCKET_NAME
+            },
+        ],
         StackName = PROJECT,
         TemplateBody = template
     )
